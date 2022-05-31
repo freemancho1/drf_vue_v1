@@ -1,0 +1,81 @@
+@import './properties';
+@import './menus';
+@import './user-manager'; 
+@import './common';
+
+.page-view {
+    margin-left: 15px;
+
+    .page-title {
+        color: $important;
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    .page-section {
+        margin-bottom: 30px;
+        
+        .sub-title {
+            color: $primary;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 3px;
+            border-bottom: 1px solid $text11;
+        
+            .sub-title-caption {
+                color: $sub;
+                font-size: 10px !important;
+                font-weight: normal;
+            }
+        }
+
+
+        .page-article {
+            margin-bottom: 50px;
+
+            label {
+                color: $important;
+                font-size: 17px;
+            }
+            .readonly-text {
+                color: $primary;
+                background-color: $text11 !important;
+                border: 0px;
+            }
+            .form-group {
+                margin-top: 20px;
+            }
+            input {
+                border: 1px solid $text11;
+                &:focus {
+                    border: 2px solid $normal;
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+            }
+            .form-check-input:checked {
+                background-color: $normal;
+            }
+        }
+    }
+}
+
+.btn {
+    &.btn-col-primary {
+        color: $text12;
+        background-color: $primary;
+        &:hover {
+            color: $text12;
+            background-color: $important;
+        }
+    }
+    &.btn-col-danger {
+        color: $text12;
+        background-color: $danger;
+        &:hover {
+            color: $text12;
+            background-color: $warning;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@import './properties';
+
+.modal-dialog-box {
+
+    .modal-header {
+        color: $text12;
+        .btn-close {
+            font-size: 12px;
+        }
+        .mc-title {
+            font-size: 25px;
+        }
+        .mc-message {
+            font-size: 13px;
+        }
+        &.info {
+            border: 0px solid $normal;
+            background-color: $normal;
+        }
+        &.error {
+            border: 0px solid $danger;
+            background-color: $danger;
+        }
+        &.normal {
+            border: 0px solid $primary;
+            background-color: $primary;
+        }
+    }
+    
+    .modal-body {
+        color: $text11;
+        &.info {
+            border: 1px solid $normal;
+            background-color: $normal;
+        }
+        &.error {
+            border: 1px solid $danger;
+            background-color: $danger;
+        }
+        &.normal {
+            border: 1px solid $primary;
+            background-color: $primary;
+        }
+    }
+
+    .modal-footer {
+        .info {
+            color: $normal !important;
+        }
+        .error {
+            color: $danger !important;
+        }
+        .normal {
+            color: $primary !important;
+        }
+    }
+}
+
+.user-error-message {
+    .error-style {
+        color: $danger;
+        font-size: 12px;
+    }
+}
