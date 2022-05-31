@@ -1,15 +1,15 @@
 # DRF - Django REST Framework
-/refresh/.idea
+/drf/.idea
 
-/refresh/authenticate/__pycache__
-/refresh/authenticate/migrations
+/drf/authenticate/__pycache__
+/drf/authenticate/migrations
 
-/refresh/config/__pycache__
+/drf/config/__pycache__
 
-/refresh/todo/__pycache__
-/refresh/todo/migrations
+/drf/todo/__pycache__
+/drf/todo/migrations
 
-/refresh/db.sqlite3
+/drf/db.sqlite3
 
 
 # Vue.js with Bootstrap 5
