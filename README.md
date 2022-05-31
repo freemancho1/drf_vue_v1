@@ -58,6 +58,8 @@ npm install axios
 npm install vee-validate
 npm install yup
 ```
+* axios: Packages for REST communication
+* vee-validate, yup: Form Control's Input Data Inspector
 <br/><br/>
 
 

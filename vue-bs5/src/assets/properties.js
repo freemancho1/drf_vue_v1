@@ -58,6 +58,7 @@ export const RMENUS = [
         LABEL       : 'Read Me',
         NAME        : 'ReadMe',
         TO          : '/read-me',
+        TO2         : 'https://github.com/freemancho1/drf_vue_v1',
         COMPONENT   : ReadMe,
     }
 ]

@@ -60,6 +60,10 @@ watch(currMenuId, (newValue) => {
 })
 
 const goMenuPath = (path) => {
-    router.push(path)
+    if (path === RMENUS[0].TO) {
+        window.open(RMENUS[0].TO2)
+    } else {
+        router.push(path)
+    }
 }
 </script>

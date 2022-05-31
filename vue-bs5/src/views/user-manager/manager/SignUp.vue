@@ -3,7 +3,10 @@
 
     <div class="page-title">{{ pageInfo.LABEL }}</div>
 
-    <Form @submit="registerHandler" :validation-schema="schema"
+    <Form 
+        @submit="registerHandler" 
+        @invalid-submit="onInvalidSubmit"
+        :validation-schema="schema"
         class="page-section register-form">
         
         <div class="sub-title col-12">Basic Information</div>
@@ -17,24 +20,24 @@
                     autocomplete="off"/>
                 <UserErrorMessage 
                     tagName="username"
-                    :serverMessage="errors"/>
-            </div>
+                    :serverMessage="errors"/></div>
+
             <div class="col-md-6 form-group">
                 <label for="email">e-Mail</label>
                 <Field type="text" name="email"
                     class="form-control" autocomplete="off"/>
-                <UserErrorMessage tagName="email" :serverMessage="errors"/>
-            </div>
+                <UserErrorMessage tagName="email" :serverMessage="errors"/></div>
+
             <div class="col-md-6 form-group">
                 <label for="password">Password</label>
                 <Field type="password" name="password" class="form-control"/>
-                <UserErrorMessage tagName="password" :serverMessage="errors"/>
-            </div>            
+                <UserErrorMessage tagName="password" :serverMessage="errors"/></div>            
+
             <div class="col-md-6 form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <Field type="password" name="confirmPassword" class="form-control"/>
-                <UserErrorMessage tagName="confirmPassword" :serverMessage="errors"/>
-            </div>         
+                <UserErrorMessage tagName="confirmPassword" :serverMessage="errors"/></div>         
+
             <div class="col-md-6 form-group from-check">
                 <Field 
                     name="isActive" type="checkbox"
@@ -44,10 +47,9 @@
                 <label 
                     for="isActive" 
                     class="form-check-label ms-3">
-                    Is Active
-                </label>
-                <UserErrorMessage tagName="isActive" :serverMessage="errors"/>
-            </div>         
+                    Is Active </label>
+                <UserErrorMessage tagName="isActive" :serverMessage="errors"/></div>         
+
             <div class="col-md-6 form-group from-check">
                 <Field 
                     name="isStaff" type="checkbox"
@@ -55,10 +57,7 @@
                 <label 
                     for="isStaff" 
                     class="form-check-label ms-3">
-                    Is Staff
-                </label>
-            </div>         
-        </div>
+                    Is Staff </label></div></div>
 
         <div class="sub-title col-12">More Information
             <span class="sub-title-caption ms-4">[Optional]</span>
@@ -129,10 +128,11 @@ const checkItems = {
     username: [], password: [], confirmPassword: [],
     email: [], isActive: [],
 }
-const errors = ref({
-    username: [], password: [], confirmPassword: [],
-    email: [], isActive: [],
-})
+const errors = ref(checkItems)
+// const errors = ref({
+//     username: [], password: [], confirmPassword: [],
+//     email: [], isActive: [],
+// })
 
 
 // Modal Dialog Box
@@ -164,9 +164,21 @@ const registerHandler = (newUser) => {
         (error) => {
             loading.value = false
             // errors.value = store.getters[CFN.USER_MANAGER.GET_COMM_STATE].messages
-            errors.value = UV.serverValidator(error, errors.value).messages
+            // 이 값이 출력되지 않음
+            // 이 값이 출력되지 않음
+            // 이 값이 출력되지 않음
+            // 이 값이 출력되지 않음
+            errors.value = UV.serverValidator(error, checkItems).messages
+            console.log(errors.value.username)
+            errors.value.email=['aaa']
             console.log(errors.value)
         }
     )
+}
+const onInvalidSubmit = ({values, errors, results}) => {
+    console.log('values, errors, results')
+    console.log(values)
+    console.log(errors)
+    console.log(results)
 }
 </script>
